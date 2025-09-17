@@ -2,7 +2,7 @@
 
 A sophisticated LangGraph-based LLM ensemble system that combines Claude, GPT, and X.AI Grok models for comprehensive multi-perspective analysis with advanced Chain of Thought capabilities.
 
-## 🎯 Key Features
+##  Key Features
 
 ### Multi-Perspective Analysis Framework
 - **Economic Perspective**: Cost analysis, market impacts, investment considerations
@@ -19,7 +19,7 @@ A sophisticated LangGraph-based LLM ensemble system that combines Claude, GPT, a
 - **Real-time Metrics**: Processing time, quality scores, confidence tracking
 - **Memory Persistence**: Learning from historical analysis patterns
 
-## 🏗️ System Architecture
+## System Architecture
 
 Built on **LangGraph 0.2.34** for robust workflow orchestration:
 
@@ -38,7 +38,7 @@ Multi-Perspective Analysis Pipeline:
 └─────────────────┘    └──────────────────┘    └─────────────────┘
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 ```bash
@@ -97,7 +97,7 @@ python multi_perspective_main.py "Your question here"
 python multi_perspective_demo.py
 ```
 
-## 📊 Performance Results
+## Performance Results
 
 ### Demo Test Results
 - **Processing Time**: 40-48 seconds per multi-perspective query
@@ -111,7 +111,7 @@ python multi_perspective_demo.py
 - Enhanced analytical depth and synthesis quality
 - Consistent reasoning patterns across different queries
 
-## 🔧 Advanced Configuration
+## Advanced Configuration
 
 ### Custom Perspectives
 ```python
@@ -133,7 +133,7 @@ cot_configs = {
 }
 ```
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 /llm_ensemble_langgraph/
@@ -148,7 +148,7 @@ cot_configs = {
 └── PROJECT_SUMMARY.md         # Detailed implementation summary
 ```
 
-## 🔍 System Capabilities
+##  System Capabilities
 
 ### Multi-Step Analysis Process
 1. **Baseline Generation**: Raw responses without guidance
@@ -164,7 +164,7 @@ cot_configs = {
 - Response quality scoring
 - Performance comparison metrics
 
-## 🎯 Use Cases
+## Use Cases
 
 ### Research and Analysis
 - Policy impact assessment across multiple dimensions
@@ -181,7 +181,7 @@ cot_configs = {
 - Demonstrating complex problem-solving approaches
 - Comparative analysis methodology
 
-## 📈 Performance Monitoring
+## Performance Monitoring
 
 The system includes comprehensive performance tracking:
 - Processing time optimization
@@ -189,18 +189,18 @@ The system includes comprehensive performance tracking:
 - Baseline vs ensemble improvement metrics
 - Memory-based learning and pattern recognition
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch
 3. Implement enhancements with proper testing
 4. Submit a pull request with detailed description
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Built with LangGraph for robust workflow orchestration
 - Integrates Claude, GPT, and X.AI Grok for diverse AI perspectives
