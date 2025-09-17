@@ -2,7 +2,7 @@
 
 A modern React TypeScript frontend for the Multi-Perspective LLM Ensemble System with real-time agent output display.
 
-## 🎨 Design Features
+## Design Features
 
 ### Visual Design
 - **Pastel Color Palette**: Inspired by Claude, GPT, and X.AI interfaces
@@ -16,7 +16,7 @@ A modern React TypeScript frontend for the Multi-Perspective LLM Ensemble System
 - **WebSocket Communication**: Instant updates from backend to frontend
 - **Perspective Analysis**: See economic, environmental, and technological perspectives unfold
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Node.js 18+ (for frontend)
@@ -44,7 +44,7 @@ npm run dev
 
 The frontend will be available at `http://localhost:5173`
 
-## 🏗️ Architecture
+## Architecture
 
 ### Frontend Stack
 - **React 18** with TypeScript
@@ -58,7 +58,7 @@ The frontend will be available at `http://localhost:5173`
 - **LLM Ensemble Connection**: Direct integration with the multi-perspective system
 - **Real-time Updates**: Live streaming of analysis progress and results
 
-## 🎯 Features
+## Features
 
 ### Query Interface
 - **Smart Input**: Large, user-friendly query input with examples
@@ -78,7 +78,7 @@ The frontend will be available at `http://localhost:5173`
 - **Performance Metrics**: Improvement over baseline, quality scores
 - **Export Capability**: Save and share analysis results
 
-## 🎨 Color Scheme
+## Color Scheme
 
 ### Primary Colors
 - **Claude Green**: `#e8f5e8` (background), `#4ade80` (accent)
@@ -92,7 +92,7 @@ The frontend will be available at `http://localhost:5173`
 - **Mint Green**: `#f0fdfa`
 - **Peach**: `#fef7ed`
 
-## 🔧 Development
+## Development
 
 ### Project Structure
 ```
@@ -117,7 +117,7 @@ src/
 - **Custom Hooks**: Reusable logic for WebSocket communication
 - **CSS Variables**: Consistent theming and easy customization
 
-## 🌐 WebSocket API
+## WebSocket API
 
 ### Message Types
 
@@ -168,14 +168,14 @@ src/
 }
 ```
 
-## 📱 Mobile Responsiveness
+## Mobile Responsiveness
 
 - **Adaptive Layout**: Components reorganize for smaller screens
 - **Touch-Friendly**: Large buttons and touch targets
 - **Optimized Performance**: Efficient rendering for mobile devices
 - **Progressive Enhancement**: Core functionality works on all devices
 
-## 🔗 Integration with LLM Ensemble Backend
+## Integration with LLM Ensemble Backend
 
 The frontend is designed to integrate seamlessly with the existing LLM Ensemble backend:
 
@@ -184,7 +184,7 @@ The frontend is designed to integrate seamlessly with the existing LLM Ensemble 
 3. **Complete Integration**: Full access to multi-perspective analysis capabilities
 4. **Error Handling**: Graceful degradation when backend services are unavailable
 
-## 🚀 Deployment
+## Deployment
 
 ### Development
 ```bash
@@ -200,13 +200,13 @@ npm run build
 # Ensure WebSocket server is running and accessible
 ```
 
-## 🤝 Contributing
+## Contributing
 
 1. Follow the existing code style and TypeScript patterns
 2. Test real-time features with the WebSocket server
 3. Ensure mobile responsiveness for new components
 4. Maintain the pastel color scheme and design consistency
 
-## 📄 License
+## License
 
 MIT License - Same as the main LLM Ensemble project

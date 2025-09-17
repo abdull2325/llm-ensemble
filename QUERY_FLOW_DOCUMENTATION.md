@@ -1,6 +1,6 @@
-# 🚀 Multi-Perspective LLM Ensemble System - Query Flow Documentation
+# Multi-Perspective LLM Ensemble System - Query Flow Documentation
 
-## 📋 Table of Contents
+## Table of Contents
 1. [System Overview](#system-overview)
 2. [Detailed Query Flow](#detailed-query-flow)
 3. [Component Architecture](#component-architecture)
@@ -10,7 +10,7 @@
 
 ---
 
-## 🎯 System Overview
+## System Overview
 
 The Multi-Perspective LLM Ensemble System processes user queries through a sophisticated pipeline that combines multiple AI models (Claude, GPT, Grok) with judge oversight to provide comprehensive, multi-perspective analysis.
 
@@ -23,7 +23,7 @@ The Multi-Perspective LLM Ensemble System processes user queries through a sophi
 
 ---
 
-## 🔄 Detailed Query Flow
+## Detailed Query Flow
 
 ### Phase 1: Frontend Input & Initialization
 ```
@@ -257,7 +257,7 @@ The Multi-Perspective LLM Ensemble System processes user queries through a sophi
 
 ---
 
-## 🏗️ Component Architecture
+## Component Architecture
 
 ### Backend Components
 ```
@@ -307,7 +307,7 @@ The Multi-Perspective LLM Ensemble System processes user queries through a sophi
 
 ---
 
-## 📊 Data Flow Diagram
+## Data Flow Diagram
 
 ```mermaid
 graph TD
@@ -379,7 +379,7 @@ graph TD
 
 ---
 
-## 🔄 API Messages & WebSocket Communication
+## API Messages & WebSocket Communication
 
 ### Frontend → Backend Messages
 
@@ -481,7 +481,7 @@ graph TD
 
 ---
 
-## 📈 Performance Metrics Calculation
+## Performance Metrics Calculation
 
 ### Improvement Metrics
 ```python
@@ -517,7 +517,7 @@ def _calculate_advantage_metrics(self, final_state):
 
 ---
 
-## 🎯 Key Features & Benefits
+## Key Features & Benefits
 
 ### 1. **Real-Time Progress Tracking**
 - Live updates for each agent and processing step
@@ -546,7 +546,7 @@ def _calculate_advantage_metrics(self, final_state):
 
 ---
 
-## 🔧 Technical Implementation Details
+## Technical Implementation Details
 
 ### State Management
 - **Backend**: LangGraph state management with `MultiPerspectiveEnsembleState`

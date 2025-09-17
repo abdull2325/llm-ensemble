@@ -32,7 +32,7 @@ class ErrorBoundary extends Component<Props, State> {
           borderRadius: '8px',
           backgroundColor: '#ffe6e6'
         }}>
-          <h2>⚠️ Something went wrong</h2>
+          <h2>Something went wrong</h2>
           <details style={{ whiteSpace: 'pre-wrap' }}>
             <summary>Error details</summary>
             {this.state.error && this.state.error.toString()}

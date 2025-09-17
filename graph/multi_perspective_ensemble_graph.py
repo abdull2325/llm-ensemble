@@ -63,11 +63,11 @@ class MultiPerspectiveEnsembleGraph:
         # Validate inputs
         input_package.validate_inputs()
         
-        print("✅ Input package validated and prepared:")
-        print(f"📝 Query: {query}")
-        print(f"🔍 Perspectives: {perspective_1}, {perspective_2}, {perspective_3}")
-        print(f"🧠 Universal CoT: {'✓' if universal_cot else '✗'}")
-        print(f"🎯 Perspective CoTs: {len([v for v in perspective_specific_cots.values() if v])}/3 provided")
+        print("Input package validated and prepared:")
+        print(f"Query: {query}")
+        print(f"Perspectives: {perspective_1}, {perspective_2}, {perspective_3}")
+        print(f"Universal CoT: {'✓' if universal_cot else '✗'}")
+        print(f"Perspective CoTs: {len([v for v in perspective_specific_cots.values() if v])}/3 provided")
         
         return input_package
     
@@ -114,8 +114,8 @@ class MultiPerspectiveEnsembleGraph:
             input_package=input_package
         )
         
-        print(f"\n🚀 Starting Multi-Perspective LLM Ensemble Analysis...")
-        print(f"📊 Query: {query[:100]}...")
+        print(f"\nStarting Multi-Perspective LLM Ensemble Analysis...")
+        print(f"Query: {query[:100]}...")
         
         try:
             # Run the graph

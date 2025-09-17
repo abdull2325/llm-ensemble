@@ -20,10 +20,10 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 try:
     from graph.multi_perspective_ensemble_graph import MultiPerspectiveEnsembleGraph
     from config.settings import settings
-    print("✅ Successfully imported LangGraph backend")
+    print("Successfully imported LangGraph backend")
 except ImportError as e:
-    print(f"❌ Failed to import LangGraph backend: {e}")
-    print("💡 Make sure you're running from the correct directory and have the backend dependencies installed")
+    print(f"Failed to import LangGraph backend: {e}")
+    print("Make sure you're running from the correct directory and have the backend dependencies installed")
     sys.exit(1)
 
 # Configure logging
@@ -40,12 +40,12 @@ class LLMEnsembleWebSocketServer:
         
         # Initialize LangGraph backend
         try:
-            logger.info("🔧 Initializing LangGraph backend...")
+            logger.info("Initializing LangGraph backend...")
             self.ensemble_graph = MultiPerspectiveEnsembleGraph()
-            logger.info("✅ LangGraph backend initialized successfully")
+            logger.info("LangGraph backend initialized successfully")
         except Exception as e:
-            logger.error(f"❌ Failed to initialize LangGraph backend: {e}")
-            logger.info("⚠️  Falling back to simulation mode")
+            logger.error(f"Failed to initialize LangGraph backend: {e}")
+            logger.info("Falling back to simulation mode")
             self.ensemble_graph = None
         
     async def register_client(self, websocket, client_id: str):
@@ -115,7 +115,7 @@ class LLMEnsembleWebSocketServer:
         universal_cot = data.get('universalCot', '')
         perspective_cots = data.get('perspectiveCots', {})
         
-        logger.info(f"🔄 Starting analysis for query: {query[:50]}...")
+        logger.info(f"Starting analysis for query: {query[:50]}...")
         
         # Notify client that analysis has started
         await self.send_to_client(websocket, {
@@ -128,7 +128,7 @@ class LLMEnsembleWebSocketServer:
         if self.ensemble_graph:
             await self.run_real_analysis(websocket, query, universal_cot, perspective_cots)
         else:
-            logger.warning("⚠️ Ensemble graph not available, falling back to simulation")
+            logger.warning("Ensemble graph not available, falling back to simulation")
             await self.simulate_analysis(websocket, query, universal_cot, perspective_cots)
             
     async def run_real_analysis(self, websocket, query: str, universal_cot: str, perspective_cots: dict):
@@ -167,7 +167,7 @@ class LLMEnsembleWebSocketServer:
             chain_of_thought_3 = perspective_cots.get('analytical', '')
             
             # Start the real LangGraph analysis
-            logger.info(f"🚀 Starting real LangGraph analysis for query: {query[:50]}...")
+            logger.info(f"Starting real LangGraph analysis for query: {query[:50]}...")
             
             # Start the analysis in a background task so we can provide updates
             analysis_task = asyncio.create_task(
@@ -483,15 +483,15 @@ class LLMEnsembleWebSocketServer:
         
         Based on multi-perspective analysis from our agent ensemble:
         
-        🔍 **Critical Analysis**: The query presents important considerations around underlying assumptions and requires systematic evaluation.
+        **Critical Analysis**: The query presents important considerations around underlying assumptions and requires systematic evaluation.
         
-        🎨 **Creative Insights**: Innovative approaches and out-of-the-box thinking can provide unique value and differentiation.
+        **Creative Insights**: Innovative approaches and out-of-the-box thinking can provide unique value and differentiation.
         
-        📊 **Analytical Assessment**: Data-driven insights and logical breakdown reveal key patterns and quantifiable metrics.
+        **Analytical Assessment**: Data-driven insights and logical breakdown reveal key patterns and quantifiable metrics.
         
-        ⚙️ **Practical Implementation**: Clear actionable steps and real-world strategies ensure effective execution.
+        **Practical Implementation**: Clear actionable steps and real-world strategies ensure effective execution.
         
-        🎯 **Strategic Perspective**: Long-term planning and systematic approaches align with broader objectives.
+        **Strategic Perspective**: Long-term planning and systematic approaches align with broader objectives.
         
         **Consensus Confidence**: 94%
         **Total Tokens Used**: 875
@@ -595,10 +595,10 @@ async def main():
         raise
 
 if __name__ == "__main__":
-    print("🚀 Starting LLM Ensemble WebSocket Server")
-    print("📡 Frontend will connect to: ws://localhost:8001")  
-    print("🌐 Frontend will run on: http://localhost:5173")
-    print("⚡ Use Ctrl+C to stop the server")
+    print("Starting LLM Ensemble WebSocket Server")
+    print("Frontend will connect to: ws://localhost:8001")  
+    print("Frontend will run on: http://localhost:5173")
+    print("Use Ctrl+C to stop the server")
     print("-" * 50)
     
     asyncio.run(main())
@@ -904,9 +904,9 @@ async def main():
         logger.error(f"Server error: {e}")
 
 if __name__ == "__main__":
-    print("🚀 Starting LLM Ensemble WebSocket Server")
-    print("📡 Frontend will connect to: ws://localhost:8001")
-    print("🌐 Frontend will run on: http://localhost:5173")
-    print("⚡ Use Ctrl+C to stop the server")
+    print("Starting LLM Ensemble WebSocket Server")
+    print("Frontend will connect to: ws://localhost:8001")
+    print("Frontend will run on: http://localhost:5173")
+    print("Use Ctrl+C to stop the server")
     print("-" * 50)
     asyncio.run(main())

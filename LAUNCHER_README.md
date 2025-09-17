@@ -9,24 +9,24 @@ This directory contains two launcher scripts to start both the backend and front
 python start_system.py
 ```
 **Features:**
-- ✅ Advanced process management
-- ✅ Real-time output monitoring with prefixes
-- ✅ Automatic dependency checking
-- ✅ Graceful shutdown handling
-- ✅ Cross-platform compatibility
-- ✅ Colored output and status messages
+- Advanced process management
+- Real-time output monitoring with prefixes
+- Automatic dependency checking
+- Graceful shutdown handling
+- Cross-platform compatibility
+- Colored output and status messages
 
 ### 2. Shell Script Launcher (Alternative)
 ```bash
 ./start_system.sh
 ```
 **Features:**
-- ✅ Fast startup with minimal overhead
-- ✅ Colored terminal output
-- ✅ Process monitoring
-- ✅ Signal handling for clean shutdown
-- ✅ Native bash performance
-- ⚠️ Unix/Linux/macOS only
+- Fast startup with minimal overhead
+- Colored terminal output
+- Process monitoring
+- Signal handling for clean shutdown
+- Native bash performance
+- Unix/Linux/macOS only
 
 ## What the Launchers Do
 
@@ -70,28 +70,28 @@ cd /path/to/llm_ensemble_langgraph
 ### Expected Output
 ```
 ================================================================================
-🚀 Multi-Perspective LLM Ensemble System Launcher
+ Multi-Perspective LLM Ensemble System Launcher
 ================================================================================
-📁 Project root: /path/to/llm_ensemble_langgraph
-🐍 Python virtual env: /path/to/.venv/bin/python
-🔧 Backend script: /path/to/backend_websocket_server.py
-🌐 Frontend directory: /path/to/fontend
+Project root: /path/to/llm_ensemble_langgraph
+Python virtual env: /path/to/.venv/bin/python
+Backend script: /path/to/backend_websocket_server.py
+Frontend directory: /path/to/fontend
 ================================================================================
-🚀 Starting Backend WebSocket Server...
-✅ Backend server started successfully
-🎨 Starting Frontend Development Server...
-✅ Frontend server started successfully
+Starting Backend WebSocket Server...
+Backend server started successfully
+Starting Frontend Development Server...
+Frontend server started successfully
 
 ================================================================================
-🎉 SYSTEM SUCCESSFULLY STARTED!
+SYSTEM SUCCESSFULLY STARTED!
 ================================================================================
-🔧 Backend WebSocket Server: ws://localhost:8001
-🌐 Frontend Application: http://localhost:5173
-📊 Multi-Perspective Analysis: Economic, Environmental, Technological
-🧠 Chain of Thought: Universal + Perspective-specific
+ Backend WebSocket Server: ws://localhost:8001
+ Frontend Application: http://localhost:5173
+ Multi-Perspective Analysis: Economic, Environmental, Technological
+ Chain of Thought: Universal + Perspective-specific
 ================================================================================
-⚡ Press Ctrl+C to stop both services
-🌐 Open your browser to http://localhost:5173 to use the application
+ Press Ctrl+C to stop both services
+ Open your browser to http://localhost:5173 to use the application
 ================================================================================
 ```
 

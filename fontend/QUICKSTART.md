@@ -1,15 +1,15 @@
-# 🚀 LLM Ensemble Frontend - Quick Start Guide
+#  LLM Ensemble Frontend - Quick Start Guide
 
 Welcome to the LLM Ensemble Frontend! This modern React interface provides real-time visualization of your multi-perspective AI analysis system.
 
-## ✨ What You'll Get
+##  What You'll Get
 
 - **Real-time Agent Monitoring**: Watch Claude, GPT, and Grok analyze your queries live
 - **Multi-Perspective Analysis**: See economic, environmental, and technological perspectives unfold
 - **Beautiful Pastel UI**: Inspired by Claude, GPT, and X.AI interfaces (no purple!)
 - **WebSocket Communication**: Instant updates and seamless backend integration
 
-## 🏃‍♀️ Quick Start (2 Minutes)
+##  Quick Start (2 Minutes)
 
 ### Option 1: Automated Startup
 ```bash
@@ -28,13 +28,13 @@ npm install
 npm run dev
 ```
 
-## 🌐 Access the Application
+##  Access the Application
 
 1. **WebSocket Server**: Starts automatically on `ws://localhost:8001`
 2. **Frontend Interface**: Open `http://localhost:5173` in your browser
 3. **Connection Status**: Check the header for green "Connected" indicator
 
-## 🎯 Using the Interface
+##  Using the Interface
 
 ### 1. Enter Your Query
 - Type your question in the main input box
@@ -56,7 +56,7 @@ npm run dev
 - Check quality scores and performance metrics
 - Export results for further use
 
-## 🎨 Interface Features
+##  Interface Features
 
 ### Header
 - **Connection Status**: Real-time WebSocket connection indicator
@@ -81,7 +81,7 @@ npm run dev
 - **Performance Metrics**: Improvement over baseline analysis
 - **Quality Scores**: Individual model performance ratings
 
-## 🔧 Troubleshooting
+##  Troubleshooting
 
 ### WebSocket Connection Issues
 ```bash
@@ -105,14 +105,14 @@ npm run dev
 - **Yellow "Connecting"**: Attempting to establish connection
 - **Red "Disconnected"**: Check WebSocket server status
 
-## 📱 Mobile Support
+## Mobile Support
 
 The interface is fully responsive and works on:
 - **Desktop**: Full feature set with multi-column layout
 - **Tablet**: Adaptive layout with touch-friendly controls
 - **Mobile**: Optimized single-column view with core functionality
 
-## 🎨 Design Philosophy
+## Design Philosophy
 
 ### Color Palette
 - **Claude Green**: Soft green backgrounds with vibrant green accents
@@ -126,7 +126,7 @@ The interface is fully responsive and works on:
 - **Progressive Disclosure**: Advanced features hidden until needed
 - **Mobile-First**: Responsive design starting from mobile up
 
-## 🔗 Backend Integration
+## Backend Integration
 
 ### Current Setup
 - **Demo Mode**: WebSocket server provides realistic demo analysis
@@ -138,7 +138,7 @@ The interface is fully responsive and works on:
 - Connect to existing multi_perspective_main.py system
 - Maintain WebSocket communication for real-time updates
 
-## 📊 Example Analysis Flow
+## Example Analysis Flow
 
 1. **Query**: "What are the benefits of renewable energy?"
 2. **Universal CoT**: "be concise, focus on evidence-based analysis"
@@ -154,7 +154,7 @@ Watch as:
 - Judge synthesizes all perspectives
 - Final comprehensive analysis is presented
 
-## 🚀 Next Steps
+## Next Steps
 
 1. **Try Different Queries**: Test various topics and perspectives
 2. **Experiment with CoT**: See how different guidance affects analysis
@@ -162,7 +162,7 @@ Watch as:
 4. **Mobile Testing**: Try the interface on different devices
 5. **Backend Integration**: Connect to your actual LLM Ensemble system
 
-## 🤝 Support
+## Support
 
 - **Documentation**: See README.md for technical details
 - **Issues**: Check console for error messages
@@ -171,4 +171,4 @@ Watch as:
 
 ---
 
-**Enjoy your multi-perspective AI analysis! 🧠✨**
+**Enjoy your multi-perspective AI analysis!**

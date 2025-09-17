@@ -21,10 +21,10 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 try:
     from graph.multi_perspective_ensemble_graph import MultiPerspectiveEnsembleGraph
     from config.settings import settings
-    print("✅ Successfully imported LangGraph backend")
+    print("Successfully imported LangGraph backend")
 except ImportError as e:
-    print(f"❌ Failed to import LangGraph backend: {e}")
-    print("💡 Make sure you're running from the correct directory and have the backend dependencies installed")
+    print(f"Failed to import LangGraph backend: {e}")
+    print("Make sure you're running from the correct directory and have the backend dependencies installed")
     sys.exit(1)
 
 # Configure logging
@@ -41,12 +41,12 @@ class EnhancedLLMEnsembleWebSocketServer:
         
         # Initialize LangGraph backend
         try:
-            logger.info("🔧 Initializing Enhanced LangGraph backend...")
+            logger.info("Initializing Enhanced LangGraph backend...")
             self.ensemble_graph = MultiPerspectiveEnsembleGraph()
-            logger.info("✅ Enhanced LangGraph backend initialized successfully")
+            logger.info("Enhanced LangGraph backend initialized successfully")
         except Exception as e:
-            logger.error(f"❌ Failed to initialize LangGraph backend: {e}")
-            logger.info("⚠️  Falling back to enhanced simulation mode")
+            logger.error(f"Failed to initialize LangGraph backend: {e}")
+            logger.info("Falling back to enhanced simulation mode")
             self.ensemble_graph = None
         
     async def register_client(self, websocket, client_id: str):
@@ -129,7 +129,7 @@ class EnhancedLLMEnsembleWebSocketServer:
         if self.ensemble_graph:
             await self.run_real_analysis(websocket, query, universal_cot, perspective_cots)
         else:
-            logger.warning("⚠️ Ensemble graph not available, using enhanced simulation")
+            logger.warning("Ensemble graph not available, using enhanced simulation")
             await self.run_enhanced_demo_analysis(websocket, query, universal_cot, perspective_cots)
             
     async def run_real_analysis(self, websocket, query: str, universal_cot: str, perspective_cots: dict):
@@ -170,7 +170,7 @@ class EnhancedLLMEnsembleWebSocketServer:
             chain_of_thought_3 = perspective_cots.get('technological', '')
             
             # Start the real LangGraph analysis
-            logger.info(f"🚀 Starting real enhanced LangGraph analysis for query: {query[:50]}...")
+            logger.info(f"Starting real enhanced LangGraph analysis for query: {query[:50]}...")
             
             # Start the analysis in a background task so we can provide updates
             analysis_task = asyncio.create_task(
@@ -799,11 +799,11 @@ async def main():
         raise
 
 if __name__ == "__main__":
-    print("🚀 Starting Enhanced LLM Ensemble WebSocket Server")
-    print("📡 Frontend will connect to: ws://localhost:8001")
-    print("🌐 Frontend will run on: http://localhost:5173")
-    print("⚡ Use Ctrl+C to stop the server")
-    print("🔍 Enhanced Features:")
+    print("Starting Enhanced LLM Ensemble WebSocket Server")
+    print("Frontend will connect to: ws://localhost:8001")
+    print("Frontend will run on: http://localhost:5173")
+    print("Use Ctrl+C to stop the server")
+    print("Enhanced Features:")
     print("  • Judge assessments at every stage")
     print("  • Baseline response comparisons")  
     print("  • Chain of Thought guidance integration")

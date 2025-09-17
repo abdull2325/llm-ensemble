@@ -28,7 +28,7 @@ class MultiPerspectiveNodes:
     
     async def baseline_analysis_node(self, state: MultiPerspectiveEnsembleState) -> Dict[str, Any]:
         """Generate raw baseline responses without any guidance + Judge initial assessment"""
-        print("📊 Generating baseline responses (no guidance)...")
+        print("Generating baseline responses (no guidance)...")
         
         query = state.input_package.query
         
@@ -55,7 +55,7 @@ class MultiPerspectiveNodes:
             updates["grok_baseline"] = grok_baseline
         
         # Send query to judge for initial assessment
-        print("⚖️ Judge: Initial query assessment...")
+        print("Judge: Initial query assessment...")
         judge_initial_prompt = f"""
         You are evaluating a query that will be analyzed through a multi-perspective approach.
         
@@ -127,7 +127,7 @@ class MultiPerspectiveNodes:
             updates["grok_analysis"] = grok_analysis
         
         # Judge assessment of Step 1 results
-        print("⚖️ Judge: Step 1 assessment...")
+        print("Judge: Step 1 assessment...")
         step1_judge_prompt = f"""
         You are evaluating Step 1 of a multi-perspective analysis focused on the ECONOMIC perspective.
         
@@ -160,7 +160,7 @@ class MultiPerspectiveNodes:
     
     async def step2_environmental_analysis_node(self, state: MultiPerspectiveEnsembleState) -> Dict[str, Any]:
         """Step 2: Add environmental perspective and compare with economic + Judge assessment"""
-        print("🌱 Step 2: Adding environmental perspective...")
+        print("Step 2: Adding environmental perspective...")
         
         package = state.input_package
         environmental_cot = package.perspective_specific_cots.get("environmental", "")
@@ -229,7 +229,7 @@ class MultiPerspectiveNodes:
     
     async def step3_technological_synthesis_node(self, state: MultiPerspectiveEnsembleState) -> Dict[str, Any]:
         """Step 3: Complete three-perspective synthesis + Judge assessment"""
-        print("🔧 Step 3: Complete technological synthesis...")
+        print("Step 3: Complete technological synthesis...")
         
         package = state.input_package
         technological_cot = package.perspective_specific_cots.get("technological", "")
@@ -268,7 +268,7 @@ class MultiPerspectiveNodes:
             updates["grok_analysis"] = grok_analysis
         
         # Judge assessment of Step 3 results  
-        print("⚖️ Judge: Step 3 assessment...")
+        print("Judge: Step 3 assessment...")
         step3_judge_prompt = f"""
         You are evaluating Step 3 of a multi-perspective analysis where TECHNOLOGICAL perspective was integrated with ECONOMIC and ENVIRONMENTAL.
         
@@ -301,7 +301,7 @@ class MultiPerspectiveNodes:
     
     async def judge_evaluation_node(self, state: MultiPerspectiveEnsembleState) -> Dict[str, Any]:
         """Final comprehensive judge evaluation synthesizing all analyses and stage assessments"""
-        print("⚖️ Final Judge evaluation and synthesis...")
+        print("Final Judge evaluation and synthesis...")
         
         judge_prompt = self._create_comprehensive_judge_evaluation_prompt(state)
         
@@ -342,7 +342,7 @@ class MultiPerspectiveNodes:
     
     async def performance_logging_node(self, state: MultiPerspectiveEnsembleState) -> Dict[str, Any]:
         """Enhanced performance comparison: ensemble vs individual baselines with detailed metrics"""
-        print("📝 Performance comparison and logging...")
+        print("Performance comparison and logging...")
         
         # Comprehensive comparison of ensemble final synthesis against each baseline
         comparison_results = {}

@@ -30,28 +30,28 @@ class SystemLauncher:
     def _validate_paths(self):
         """Validate that all required paths exist"""
         if not self.venv_python.exists():
-            print("❌ Virtual environment not found. Please create it first:")
+            print(" Virtual environment not found. Please create it first:")
             print("   python -m venv .venv")
             print("   source .venv/bin/activate")
             print("   pip install -r requirements.txt")
             sys.exit(1)
         
         if not self.backend_script.exists():
-            print("❌ Backend script not found at:", self.backend_script)
+            print(" Backend script not found at:", self.backend_script)
             sys.exit(1)
         
         if not self.frontend_dir.exists():
-            print("❌ Frontend directory not found at:", self.frontend_dir)
+            print(" Frontend directory not found at:", self.frontend_dir)
             sys.exit(1)
         
         package_json = self.frontend_dir / "package.json"
         if not package_json.exists():
-            print("❌ Frontend package.json not found. Please run 'npm install' in the frontend directory.")
+            print(" Frontend package.json not found. Please run 'npm install' in the frontend directory.")
             sys.exit(1)
     
     def start_backend(self):
         """Start the backend WebSocket server"""
-        print("🚀 Starting Backend WebSocket Server...")
+        print(" Starting Backend WebSocket Server...")
         try:
             self.backend_process = subprocess.Popen(
                 [str(self.venv_python), str(self.backend_script)],
@@ -74,24 +74,24 @@ class SystemLauncher:
             time.sleep(3)
             
             if self.backend_process.poll() is None:
-                print("✅ Backend server started successfully")
+                print(" Backend server started successfully")
                 return True
             else:
-                print("❌ Backend server failed to start")
+                print(" Backend server failed to start")
                 return False
                 
         except Exception as e:
-            print(f"❌ Error starting backend: {e}")
+            print(f" Error starting backend: {e}")
             return False
     
     def start_frontend(self):
         """Start the frontend development server"""
-        print("🎨 Starting Frontend Development Server...")
+        print(" Starting Frontend Development Server...")
         try:
             # Check if node_modules exists
             node_modules = self.frontend_dir / "node_modules"
             if not node_modules.exists():
-                print("📦 Installing frontend dependencies...")
+                print(" Installing frontend dependencies...")
                 npm_install = subprocess.run(
                     ["npm", "install"],
                     cwd=str(self.frontend_dir),
@@ -99,10 +99,10 @@ class SystemLauncher:
                     text=True
                 )
                 if npm_install.returncode != 0:
-                    print("❌ Failed to install frontend dependencies")
+                    print(" Failed to install frontend dependencies")
                     print(npm_install.stderr)
                     return False
-                print("✅ Frontend dependencies installed")
+                print(" Frontend dependencies installed")
             
             self.frontend_process = subprocess.Popen(
                 ["npm", "run", "dev"],
@@ -125,14 +125,14 @@ class SystemLauncher:
             time.sleep(5)
             
             if self.frontend_process.poll() is None:
-                print("✅ Frontend server started successfully")
+                print(" Frontend server started successfully")
                 return True
             else:
-                print("❌ Frontend server failed to start")
+                print(" Frontend server failed to start")
                 return False
                 
         except Exception as e:
-            print(f"❌ Error starting frontend: {e}")
+            print(f" Error starting frontend: {e}")
             return False
     
     def _monitor_process(self, process, name, icon):
@@ -143,38 +143,38 @@ class SystemLauncher:
                     print(f"{icon} {name}: {line.strip()}")
         except Exception as e:
             if self.running:
-                print(f"❌ Error monitoring {name}: {e}")
+                print(f" Error monitoring {name}: {e}")
     
     def stop_services(self):
         """Stop both backend and frontend services"""
-        print("\n🛑 Stopping services...")
+        print("\n Stopping services...")
         self.running = False
         
         if self.backend_process:
             try:
                 self.backend_process.terminate()
                 self.backend_process.wait(timeout=5)
-                print("✅ Backend server stopped")
+                print(" Backend server stopped")
             except subprocess.TimeoutExpired:
                 self.backend_process.kill()
                 print("🔨 Backend server force-killed")
             except Exception as e:
-                print(f"❌ Error stopping backend: {e}")
+                print(f" Error stopping backend: {e}")
         
         if self.frontend_process:
             try:
                 self.frontend_process.terminate()
                 self.frontend_process.wait(timeout=5)
-                print("✅ Frontend server stopped")
+                print(" Frontend server stopped")
             except subprocess.TimeoutExpired:
                 self.frontend_process.kill()
                 print("🔨 Frontend server force-killed")
             except Exception as e:
-                print(f"❌ Error stopping frontend: {e}")
+                print(f" Error stopping frontend: {e}")
     
     def signal_handler(self, signum, frame):
         """Handle Ctrl+C gracefully"""
-        print(f"\n🔄 Received signal {signum}, shutting down...")
+        print(f"\n Received signal {signum}, shutting down...")
         self.stop_services()
         sys.exit(0)
     
@@ -185,43 +185,43 @@ class SystemLauncher:
         signal.signal(signal.SIGTERM, self.signal_handler)
         
         print("=" * 80)
-        print("🚀 Multi-Perspective LLM Ensemble System Launcher")
+        print(" Multi-Perspective LLM Ensemble System Launcher")
         print("=" * 80)
-        print("📁 Project root:", self.project_root)
-        print("🐍 Python virtual env:", self.venv_python)
-        print("🔧 Backend script:", self.backend_script)
-        print("🌐 Frontend directory:", self.frontend_dir)
+        print(" Project root:", self.project_root)
+        print(" Python virtual env:", self.venv_python)
+        print(" Backend script:", self.backend_script)
+        print(" Frontend directory:", self.frontend_dir)
         print("=" * 80)
         
         try:
             # Start backend first
             if not self.start_backend():
-                print("❌ Failed to start backend. Exiting.")
+                print(" Failed to start backend. Exiting.")
                 sys.exit(1)
             
             # Start frontend
             if not self.start_frontend():
-                print("❌ Failed to start frontend. Stopping backend and exiting.")
+                print(" Failed to start frontend. Stopping backend and exiting.")
                 self.stop_services()
                 sys.exit(1)
             
             print("\n" + "=" * 80)
-            print("🎉 SYSTEM SUCCESSFULLY STARTED!")
+            print("SYSTEM SUCCESSFULLY STARTED!")
             print("=" * 80)
-            print("🔧 Backend WebSocket Server: ws://localhost:8001")
-            print("🌐 Frontend Application: http://localhost:5173")
-            print("📊 Multi-Perspective Analysis: Economic, Environmental, Technological")
-            print("🧠 Chain of Thought: Universal + Perspective-specific")
+            print(" Backend WebSocket Server: ws://localhost:8001")
+            print("Frontend Application: http://localhost:5173")
+            print(" Multi-Perspective Analysis: Economic, Environmental, Technological")
+            print(" Chain of Thought: Universal + Perspective-specific")
             print("=" * 80)
-            print("📝 Features Available:")
+            print(" Features Available:")
             print("   • Real-time agent output visualization")
             print("   • Multi-step perspective analysis")
             print("   • Baseline vs ensemble comparison")
             print("   • Live progress tracking")
             print("   • Performance metrics")
             print("=" * 80)
-            print("⚡ Press Ctrl+C to stop both services")
-            print("🌐 Open your browser to http://localhost:5173 to use the application")
+            print(" Press Ctrl+C to stop both services")
+            print(" Open your browser to http://localhost:5173 to use the application")
             print("=" * 80)
             
             # Keep the main thread alive
@@ -229,11 +229,11 @@ class SystemLauncher:
                 while self.running:
                     # Check if processes are still running
                     if self.backend_process and self.backend_process.poll() is not None:
-                        print("❌ Backend process has stopped unexpectedly")
+                        print(" Backend process has stopped unexpectedly")
                         break
                     
                     if self.frontend_process and self.frontend_process.poll() is not None:
-                        print("❌ Frontend process has stopped unexpectedly")
+                        print(" Frontend process has stopped unexpectedly")
                         break
                     
                     time.sleep(1)
@@ -241,7 +241,7 @@ class SystemLauncher:
                 pass
             
         except Exception as e:
-            print(f"❌ Unexpected error: {e}")
+            print(f" Unexpected error: {e}")
         finally:
             self.stop_services()
 

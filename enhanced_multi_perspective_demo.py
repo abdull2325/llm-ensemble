@@ -12,7 +12,7 @@ from utils.chain_of_thought import ChainOfThoughtEnhancer
 async def demonstrate_enhanced_multi_perspective_analysis():
     """Demonstrate the enhanced multi-perspective analysis with judge involvement at each stage"""
     
-    print("🚀 Enhanced Multi-Perspective LLM Ensemble Demonstration")
+    print(" Enhanced Multi-Perspective LLM Ensemble Demonstration")
     print("=" * 80)
     
     # Initialize the enhanced ensemble graph
@@ -26,7 +26,7 @@ async def demonstrate_enhanced_multi_perspective_analysis():
     ensuring environmental sustainability and technological advancement?
     """
     
-    print(f"📝 Query: {query}")
+    print(f"Query: {query}")
     print("\n" + "=" * 80)
     
     # Enhanced universal and perspective-specific guidance
@@ -35,7 +35,7 @@ async def demonstrate_enhanced_multi_perspective_analysis():
     environmental_cot = cot_enhancer.get_perspective_specific_guidance("environmental")
     technological_cot = cot_enhancer.get_perspective_specific_guidance("technological")
     
-    print("🧠 Enhanced Chain of Thought Guidance:")
+    print("Enhanced Chain of Thought Guidance:")
     print(f"Universal CoT: {len(universal_cot)} characters")
     print(f"Economic CoT: {len(economic_cot)} characters")
     print(f"Environmental CoT: {len(environmental_cot)} characters")
@@ -59,42 +59,42 @@ async def demonstrate_enhanced_multi_perspective_analysis():
         
         processing_time = time.time() - start_time
         
-        print(f"✅ Analysis completed in {processing_time:.2f} seconds")
+        print(f"Analysis completed in {processing_time:.2f} seconds")
         print("\n" + "=" * 80)
         
         # Display comprehensive results
-        print("📊 ENHANCED MULTI-PERSPECTIVE ANALYSIS RESULTS")
+        print(" ENHANCED MULTI-PERSPECTIVE ANALYSIS RESULTS")
         print("=" * 80)
         
         # Completion Status
-        print("\n🔍 PROCESS COMPLETION STATUS:")
+        print("\n PROCESS COMPLETION STATUS:")
         completion = result.get("completion_status", {})
         for stage, completed in completion.items():
             status = "✅" if completed else "❌"
             print(f"  {status} {stage.replace('_', ' ').title()}")
         
         # Judge Assessments at Each Stage
-        print("\n⚖️ JUDGE ASSESSMENTS AT EACH STAGE:")
+        print("\n JUDGE ASSESSMENTS AT EACH STAGE:")
         judge_eval = result.get("judge_evaluation", {})
         
         if judge_eval.get("initial_assessment"):
-            print("🎯 Initial Assessment:")
+            print(" Initial Assessment:")
             print(f"  {judge_eval['initial_assessment'][:200]}...")
             
         if judge_eval.get("step1_assessment"):
-            print("\n💰 Step 1 (Economic) Assessment:")
+            print("\n Step 1 (Economic) Assessment:")
             print(f"  {judge_eval['step1_assessment'][:200]}...")
             
         if judge_eval.get("step2_assessment"):
-            print("\n🌱 Step 2 (Environmental) Assessment:")
+            print("\n Step 2 (Environmental) Assessment:")
             print(f"  {judge_eval['step2_assessment'][:200]}...")
             
         if judge_eval.get("step3_assessment"):
-            print("\n🔧 Step 3 (Technological) Assessment:")
+            print("\n Step 3 (Technological) Assessment:")
             print(f"  {judge_eval['step3_assessment'][:200]}...")
         
         # Baseline vs Multi-Perspective Comparison
-        print("\n📈 BASELINE vs MULTI-PERSPECTIVE COMPARISON:")
+        print("\n BASELINE vs MULTI-PERSPECTIVE COMPARISON:")
         baselines = result.get("baseline_responses", {})
         multi_perspective = result.get("multi_perspective_analyses", {})
         
@@ -109,16 +109,16 @@ async def demonstrate_enhanced_multi_perspective_analysis():
             print(f"    Improvement: {improvement:.2f}x")
         
         # Quality Scores
-        print("\n⭐ QUALITY SCORES FROM JUDGE:")
+        print("\n QUALITY SCORES FROM JUDGE:")
         quality_scores = judge_eval.get("quality_scores", {})
         if quality_scores:
             best_model = max(quality_scores, key=quality_scores.get)
-            print(f"  🥇 Best Performing: {best_model.upper()} ({quality_scores[best_model]:.3f})")
+            print(f"   Best Performing: {best_model.upper()} ({quality_scores[best_model]:.3f})")
             for model, score in quality_scores.items():
                 print(f"    {model.upper()}: {score:.3f}")
         
         # Final Synthesis
-        print("\n🎯 FINAL JUDGE SYNTHESIS:")
+        print("\n FINAL JUDGE SYNTHESIS:")
         final_synthesis = judge_eval.get("final_synthesis", "")
         if final_synthesis:
             print(f"  {final_synthesis[:500]}...")
@@ -130,7 +130,7 @@ async def demonstrate_enhanced_multi_perspective_analysis():
             print(f"  {methodology[:300]}...")
         
         # Performance Metrics
-        print("\n📊 PERFORMANCE METRICS:")
+        print("\n PERFORMANCE METRICS:")
         performance = result.get("performance_comparison", {})
         improvement_metrics = performance.get("improvement_metrics", {})
         methodology_effectiveness = performance.get("methodology_effectiveness", {})
@@ -138,37 +138,37 @@ async def demonstrate_enhanced_multi_perspective_analysis():
         if improvement_metrics:
             avg_improvement = improvement_metrics.get("average_length_improvement", 1.0)
             confidence_improvement = improvement_metrics.get("confidence_improvement", 0.0)
-            print(f"  📏 Average Length Improvement: {avg_improvement:.2f}x")
-            print(f"  🎯 Confidence Improvement: {confidence_improvement:+.3f}")
+            print(f"   Average Length Improvement: {avg_improvement:.2f}x")
+            print(f"   Confidence Improvement: {confidence_improvement:+.3f}")
         
         if methodology_effectiveness:
             completion_rate = methodology_effectiveness.get("step_completion_rate", 0.0)
             judge_involvement = methodology_effectiveness.get("judge_involvement_at_each_stage", False)
-            print(f"  ✅ Step Completion Rate: {completion_rate:.1%}")
-            print(f"  ⚖️ Judge Involvement at Each Stage: {'Yes' if judge_involvement else 'No'}")
+            print(f"   Step Completion Rate: {completion_rate:.1%}")
+            print(f"   Judge Involvement at Each Stage: {'Yes' if judge_involvement else 'No'}")
         
         # Key Insights
-        print("\n💡 KEY INSIGHTS:")
+        print("\n KEY INSIGHTS:")
         best_insights = judge_eval.get("best_insights", "")
         if best_insights:
             print(f"  {best_insights[:400]}...")
         
         # Agreements and Disagreements
-        print("\n🤝 AGREEMENTS & DISAGREEMENTS:")
+        print("\n AGREEMENTS & DISAGREEMENTS:")
         agreements = judge_eval.get("agreements_disagreements", "")
         if agreements:
             print(f"  {agreements[:300]}...")
         
         print("\n" + "=" * 80)
-        print("✨ Enhanced Multi-Perspective Analysis Complete!")
-        print(f"📊 Total Processing Time: {processing_time:.2f} seconds")
-        print(f"🔄 Multi-Stage Process with Judge Oversight: Complete")
-        print(f"📈 Performance Improvement Demonstrated: ✅")
+        print(" Enhanced Multi-Perspective Analysis Complete!")
+        print(f" Total Processing Time: {processing_time:.2f} seconds")
+        print(f" Multi-Stage Process with Judge Oversight: Complete")
+        print(f" Performance Improvement Demonstrated: ")
         
         return result
         
     except Exception as e:
-        print(f"❌ Error during analysis: {str(e)}")
+        print(f" Error during analysis: {str(e)}")
         return None
 
 async def demonstrate_different_queries():
@@ -195,11 +195,11 @@ async def demonstrate_different_queries():
         }
     ]
     
-    print("\n🔬 MULTI-QUERY DEMONSTRATION")
+    print("\n MULTI-QUERY DEMONSTRATION")
     print("=" * 80)
     
     for i, query_info in enumerate(queries, 1):
-        print(f"\n📝 Query {i}: {query_info['name']}")
+        print(f"\n Query {i}: {query_info['name']}")
         print(f"Focus: {query_info['focus']}")
         print(f"Query: {query_info['query']}")
         
@@ -220,34 +220,34 @@ async def demonstrate_different_queries():
             judge_eval = result.get("judge_evaluation", {})
             quality_scores = judge_eval.get("quality_scores", {})
             
-            print(f"  ✅ Completed in {processing_time:.1f}s")
+            print(f"   Completed in {processing_time:.1f}s")
             if quality_scores:
                 avg_score = sum(quality_scores.values()) / len(quality_scores)
                 best_model = max(quality_scores, key=quality_scores.get)
-                print(f"  📊 Average Quality Score: {avg_score:.3f}")
-                print(f"  🥇 Best Model: {best_model.upper()}")
+                print(f"   Average Quality Score: {avg_score:.3f}")
+                print(f"   Best Model: {best_model.upper()}")
             
             final_synthesis = judge_eval.get("final_synthesis", "")
             if final_synthesis:
-                print(f"  💡 Key Insight: {final_synthesis[:150]}...")
+                print(f"   Key Insight: {final_synthesis[:150]}...")
         else:
-            print(f"  ❌ Error or incomplete analysis")
+            print(f"   Error or incomplete analysis")
         
         print("-" * 40)
 
 async def main():
     """Main demonstration function"""
-    print("🌟 Enhanced Multi-Perspective LLM Ensemble System")
-    print("🔄 With Judge Involvement at Every Stage")
-    print("📊 Performance Logging and Comparison")
-    print("🧠 Enhanced Chain of Thought Reasoning")
+    print(" Enhanced Multi-Perspective LLM Ensemble System")
+    print(" With Judge Involvement at Every Stage")
+    print(" Performance Logging and Comparison")
+    print(" Enhanced Chain of Thought Reasoning")
     print("\n" + "=" * 80)
     
     # Main demonstration
     result = await demonstrate_enhanced_multi_perspective_analysis()
     
     if result:
-        print("\n🎯 Would you like to see demonstrations with different queries?")
+        print("\n Would you like to see demonstrations with different queries?")
         print("  Uncomment the line below to run multiple query demonstrations:")
         print("  # await demonstrate_different_queries()")
         

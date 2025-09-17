@@ -81,9 +81,9 @@ async def main():
         await asyncio.Future()  # Run forever
 
 if __name__ == "__main__":
-    print("🚀 Starting Simple LLM Ensemble WebSocket Server")
-    print("📡 Frontend will connect to: ws://localhost:8001")
-    print("⚡ Use Ctrl+C to stop the server")
+    print("Starting Simple LLM Ensemble WebSocket Server")
+    print("Frontend will connect to: ws://localhost:8001")
+    print(" Use Ctrl+C to stop the server")
     print("-" * 50)
     
     try:
