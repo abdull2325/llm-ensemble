@@ -149,7 +149,7 @@ Results Display                             Performance Logging
 }
 ```
 
-## 🚀 How to Run the Complete System
+##  How to Run the Complete System
 
 ### **1. Quick Start**
 ```bash
